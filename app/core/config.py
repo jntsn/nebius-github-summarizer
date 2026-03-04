@@ -13,7 +13,7 @@ class Settings:
     nebius_base_url: str = os.getenv("NEBIUS_BASE_URL", "https://api.tokenfactory.nebius.com/v1")
     nebius_model: str = os.getenv(
         "NEBIUS_MODEL",
-        "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "Qwen/Qwen3-32B-fast",
     )
 
 
