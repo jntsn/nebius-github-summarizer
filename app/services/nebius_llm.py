@@ -37,6 +37,9 @@ def get_nebius_client() -> OpenAI:
 def chat_complete(prompt: str) -> str:
     client = get_nebius_client()
 
+    system_prompt = "You are a helpful assistant."
+    user_prompt = prompt
+
     try:
         resp = client.chat.completions.create(
             model=settings.nebius_model,

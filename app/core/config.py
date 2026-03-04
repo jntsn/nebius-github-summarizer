@@ -15,6 +15,7 @@ class Settings:
         "NEBIUS_MODEL",
         "Qwen/Qwen3-32B-fast",
     )
+    github_token: str | None = None
 
 
 settings = Settings()

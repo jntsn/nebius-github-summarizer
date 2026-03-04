@@ -6,7 +6,7 @@ API service that accepts a public GitHub repository URL and returns:
 - brief repo structure description
 
 ## Requirements
-- macOS
+- macOS or Linux (Windows: use `.venv\Scripts\activate` instead of `source .venv/bin/activate`)
 - Python 3.10+
 - Nebius Token Factory API key set via `NEBIUS_API_KEY` (do not hardcode keys)
 
@@ -41,6 +41,18 @@ Defaults (already set in code and in `.env.example`):
 
 Security note:
 - `.env` is ignored by git via `.gitignore`, so your real key is not committed.
+
+## Optional: avoid GitHub API rate limits (recommended)
+
+GitHub API unauthenticated requests are limited and repeated tests may hit 403 rate-limit errors.
+To increase limits, set an optional GitHub token:
+
+```bash
+export GITHUB_TOKEN="your_token_here"
+```
+
+If set, the service sends: Authorization: Bearer <token>
+
 
 ## Run the server
 
